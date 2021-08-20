@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <Toolbar
+    android:id="@+id/toolBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <TextView
+      android:id="@+id/transactionTitleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:textColor="@color/black"
+      android:textStyle="bold"
+      android:text="Transaction"/>
+  </Toolbar>
+
+  <include
+    android:id="@+id/txDetailProgressBar"
+    android:visibility="gone"
+    layout="@layout/progressbar_with_text"/>
+
+  <androidx.core.widget.NestedScrollView
+    android:id="@+id/walletDetailScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+      android:descendantFocusability="blocksDescendants"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="20dp">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@color/white"
+        android:padding="20dp">
+
+        <LinearLayout
+          android:id="@+id/transactionPriceOverviewLayout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+              android:id="@+id/coinImageView"
+              android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:background="@color/black" />
+
+            <TextView
+              android:id="@+id/walletNameTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:layout_marginLeft="10dp"
+              android:text="First Wallet"
+              android:textColor="@color/black"
+              android:textSize="15dp"
+              android:textStyle="bold" />
+          </LinearLayout>
+
+          <TextView
+            android:id="@+id/walletTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="T-ECDSA"
+            android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <TextView
+            android:id="@+id/wonPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₩111,111"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+          <TextView
+            android:id="@+id/coinPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="3.234 ETH"
+            android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+          android:id="@+id/lineView1"
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:layout_marginTop="12dp"
+          android:background="@color/gray30"
+          app:layout_constraintTop_toBottomOf="@+id/transactionPriceOverviewLayout" />
+
+        <TextView
+          android:id="@+id/hashAddressTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="0xsdfsdf234hidfuhf3hf8q2h39dha9wh3adw893dha98w3hdahsdfjkhadfa238"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/lineView1" />
+
+        <TextView
+          android:id="@+id/coinTypeTitleTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="Coin Type"
+          android:textColor="@color/black"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hashAddressTextView" />
+
+        <TextView
+          android:id="@+id/coinTypeTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:text="ETH"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/coinTypeTitleTextView" />
+
+        <TextView
+          android:id="@+id/amountTitleTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="Amount"
+          android:textColor="@color/black"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/coinTypeTextView" />
+
+        <TextView
+          android:id="@+id/amountTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:text="0.1"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/amountTitleTextView" />
+
+        <TextView
+          android:id="@+id/toTitleTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="To"
+          android:textColor="@color/black"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/amountTextView" />
+
+        <TextView
+          android:id="@+id/toHashAddressTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:text="0xsdfsdf234hidfuhf3hf8q2h39dha9wh3adw893d"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/toTitleTextView" />
+
+        <TextView
+          android:id="@+id/gasPriceTitleTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="Gas Price"
+          android:textColor="@color/black"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/toHashAddressTextView" />
+
+        <TextView
+          android:id="@+id/gasPriceTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:text="10000"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/gasPriceTitleTextView" />
+
+        <TextView
+          android:id="@+id/gasLimitTitleTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="Gas Limit"
+          android:textColor="@color/black"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/gasPriceTextView" />
+
+        <TextView
+          android:id="@+id/gasLimitTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:text="12000"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/gasLimitTitleTextView" />
+
+        <TextView
+          android:id="@+id/statusTitleTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:text="Status"
+          android:textColor="@color/black"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/gasLimitTextView" />
+
+        <TextView
+          android:id="@+id/statusTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="3dp"
+          android:textColor="@color/blue"
+          android:text="NONE"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/statusTitleTextView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/tECDSALayout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:visibility="gone"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/statusTextView">
+
+          <TextView
+            android:id="@+id/authValidTimeTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Auth Valid Time"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/startTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="2021.03.01 12:00:00"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/authValidTimeTitleTextView" />
+
+          <TextView
+            android:id="@+id/authValidTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:text="(10 min)"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/startTimeTextView"
+            app:layout_constraintTop_toBottomOf="@id/authValidTimeTitleTextView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:background="@color/white">
+
+        <LinearLayout
+          android:id="@+id/participantStatustitleLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+          <TextView
+            android:id="@+id/participantStatusTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Participant Status"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textFontWeight="500"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
+
+          <TextView
+            android:id="@+id/participantStatusTimerTitleTextView"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:text="2:17"
+            android:textColor="@color/red"
+            android:textSize="16dp"
+            android:textFontWeight="500"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/buttonsLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="12dp"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/participantStatustitleLayout">
+          <Button
+            android:id="@+id/quitButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:text="Quit" />
+          <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:text="Confirm" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/participantStatusRecyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/buttonsLayout">
+
+        </androidx.recyclerview.widget.RecyclerView>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+  </androidx.core.widget.NestedScrollView>
+</LinearLayout>

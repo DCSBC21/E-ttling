@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="20dp"
+  android:background="@color/whiteSmoke">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/white">
+
+    <TextView
+      android:id="@+id/versionTitleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/black"
+      android:textSize="15dp"
+      android:textStyle="bold"
+      android:text="version"/>
+    <TextView
+      android:id="@+id/versionTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="3dp"
+      android:textStyle="bold"
+      android:text="v1.0"/>
+
+    <TextView
+      android:id="@+id/nickNameTitleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/black"
+      android:textSize="15dp"
+      android:textStyle="bold"
+      android:text="email"/>
+    <TextView
+      android:id="@+id/nickNameTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="3dp"
+      android:textStyle="bold"
+      android:text="aiotholdings@gmail.com"/>
+
+    <TextView
+      android:id="@+id/nameTitleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:textColor="@color/black"
+      android:textSize="15dp"
+      android:textStyle="bold"
+      android:text="name"/>
+    <TextView
+      android:id="@+id/nameTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="3dp"
+      android:textStyle="bold"
+      android:text="Hong Gildong"/>
+
+<!--    <TextView-->
+<!--      android:id="@+id/birthDateTitleTextView"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginTop="12dp"-->
+<!--      android:textColor="@color/black"-->
+<!--      android:textSize="15dp"-->
+<!--      android:textStyle="bold"-->
+<!--      android:text="생년월일"/>-->
+<!--    <TextView-->
+<!--      android:id="@+id/birthDateTextView"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginTop="3dp"-->
+<!--      android:textStyle="bold"-->
+<!--      android:text="1990.09.09"/>-->
+
+<!--    <TextView-->
+<!--      android:id="@+id/phoneNumberTitleTextView"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginTop="12dp"-->
+<!--      android:textColor="@color/black"-->
+<!--      android:textSize="15dp"-->
+<!--      android:textStyle="bold"-->
+<!--      android:text="휴대전화번호"/>-->
+<!--    <TextView-->
+<!--      android:id="@+id/phoneNumberTextView"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginTop="3dp"-->
+<!--      android:textStyle="bold"-->
+<!--      android:text="010-1234-1234"/>-->
+
+<!--    <TextView-->
+<!--      android:id="@+id/codeTitleTextView"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginTop="12dp"-->
+<!--      android:textColor="@color/black"-->
+<!--      android:textSize="15dp"-->
+<!--      android:textStyle="bold"-->
+<!--      android:text="코드"/>-->
+<!--    <TextView-->
+<!--      android:id="@+id/codeTextView"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginTop="3dp"-->
+<!--      android:textStyle="bold"-->
+<!--      android:text="ASDF12D" />-->
+
+    <Button
+      android:id="@+id/logOutButton"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_marginTop="12dp"
+      android:background="@color/black"
+      android:textColor="@color/white"
+      android:text="Sign out" />
+  </LinearLayout>
+</LinearLayout>

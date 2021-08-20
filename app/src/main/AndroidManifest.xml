@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.arguscustody">
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <application
+    android:name = ".walletApp"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme"
+    android:usesCleartextTraffic="true">
+    <activity android:name=".view.LoginActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".view.MainActivity"></activity>
+    <activity android:name=".view.SignupActivity"></activity>
+    <activity android:name=".view.TestActivity"></activity>
+    <activity android:name=".view.CreateWalletActivity"></activity>
+    <activity android:name=".view.WalletDetailActivity"></activity>
+    <activity android:name=".view.CreateTransactionActivity"></activity>
+    <activity android:name=".view.TransactionDetailActivity"></activity>
+    <activity android:name=".view.X_AuthenticateTECDSAWalletActivity"></activity>
+    <activity android:name=".view.X_TransactionDetailActivity"></activity>
+  </application>
+
+</manifest>

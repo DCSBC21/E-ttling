@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".view.SignupActivity">
+
+  <include
+    android:id="@+id/llProgressBar"
+    android:visibility="gone"
+    layout="@layout/progressbar_with_text"/>
+
+  <LinearLayout
+    android:id="@+id/layoutTest"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    >
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/layout1"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      android:layout_weight="1"
+      android:id="@+id/layout0"
+      >
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+          android:id="@+id/ethButton"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginTop="20dp"
+          android:text="Test Eth"
+          android:textColor="@color/white"
+          android:background="@color/black"/>
+        <Button
+          android:id="@+id/klayButton"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginTop="20dp"
+          android:text="Test Klay"
+          android:textColor="@color/white"
+          android:background="@color/black"/>
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+          android:text="http://192.168.0.16:8001"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/text_server"
+          android:layout_weight="1" />
+        <Button
+          android:text="Set"
+          android:id="@+id/button_set"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+          android:text="Rust"
+          android:id="@+id/button_rust"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+        <Button
+          android:text="gg20gen"
+          android:id="@+id/button_keygen"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+        <Button
+          android:text="gg20sign"
+          android:id="@+id/button_sign"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+      </LinearLayout>
+      <EditText
+        android:text="hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_message"
+        android:layout_weight="1" />
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+          android:text="3"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/text_parties"
+          android:layout_weight="1" />
+        <EditText
+          android:text="1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/text_threshold"
+          android:layout_weight="1" />
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+          android:text="61"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textVaultIdx"
+          android:layout_weight="1" />
+        <Button
+          android:text="Get Key"
+          android:id="@+id/buttonGetKey"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+        <Button
+          android:text="Set Key"
+          android:id="@+id/buttonSetKey"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+        <Button
+          android:text="Get Sign"
+          android:id="@+id/buttonGetSign"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layout0"
+        app:layout_constraintBottom_toTopOf="@id/layout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_weight="3"
+        android:id="@+id/layout1"
+        >
+        <EditText
+          android:text="gg20keygen"
+          android:id="@+id/text_keygen"
+          android:layout_width="match_parent"
+          android:layout_height="200dp"
+          android:layout_weight="4"/>
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_weight="3"
+        android:id="@+id/layout2"
+        >
+        <EditText
+          android:text="gg20sign"
+          android:id="@+id/text_sign"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_weight="4" />
+      </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+
+</RelativeLayout>

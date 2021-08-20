@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <Toolbar
+    android:id="@+id/toolBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:layout_constraintTop_toTopOf="parent">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:textColor="@color/black"
+      android:textStyle="bold"
+      android:text="Transaction Details"/>
+  </Toolbar>
+
+  <androidx.core.widget.NestedScrollView
+    android:id="@+id/walletDetailScrollView"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/toolBar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:layout_editor_absoluteX="0dp"
+    android:background="@color/whiteSmoke">
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      android:layout_margin="20dp"
+      android:padding="20dp">
+      <LinearLayout
+        android:id="@+id/transactionPriceOverviewLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+          <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/coinImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@color/black"/>
+          <TextView
+            android:id="@+id/transactionIDTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Transaction Title"/>
+        </LinearLayout>
+        <TextView
+          android:id="@+id/walletTypeTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:textStyle="bold"
+          android:text="T-ECDSA"/>
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="vertical">
+        <TextView
+          android:id="@+id/wonPriceTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="₩111,111"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          android:textColor="@color/black"/>
+        <TextView
+          android:id="@+id/coinPriceTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:textStyle="bold"
+          android:text="3.234 ETH"/>
+      </LinearLayout>
+      <View
+        android:id="@+id/lineView1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray30"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/transactionPriceOverviewLayout"/>
+
+      <TextView
+        android:id="@+id/hashAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineView1"
+        android:textStyle="bold"
+        android:text="0xsdfsdf234hidfuhf3hf8q2h39dha9wh3adw893dha98w3hdahsdfjkhadfa238"/>
+
+      <TextView
+        android:id="@+id/transactionStatusTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hashAddressTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="Transaction Status"/>
+      
+      <TextView
+        android:id="@+id/transactionStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/transactionStatusTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:text="Success"/>
+
+      <TextView
+      android:id="@+id/coinTypeTitleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/transactionStatusTextView"
+      android:layout_marginTop="12dp"
+      android:textColor="@color/black"
+      android:textSize="15dp"
+      android:textStyle="bold"
+      android:text="Coin Type"/>
+
+      <TextView
+        android:id="@+id/coinTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/coinTypeTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="ETH"/>
+
+      <TextView
+        android:id="@+id/usersTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coinTypeTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="Users"/>
+
+      <TextView
+        android:id="@+id/usersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/usersTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="홍길동1, 홍길동2, 홍길동3"/>
+
+      <TextView
+        android:id="@+id/adminsTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usersTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="Admin"/>
+
+      <TextView
+        android:id="@+id/adminsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/adminsTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="홍길동1"/>
+
+      <TextView
+        android:id="@+id/timeStampTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminsTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="Time Stamp"/>
+
+      <TextView
+        android:id="@+id/timeStampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timeStampTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="15 days 24 mins ago"/>
+
+      <TextView
+        android:id="@+id/fromTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeStampTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="From"/>
+
+      <TextView
+        android:id="@+id/fromHashAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fromTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="0xsdfsdf234hidfuhf3hf8q2h39dha9wh3adw893d"/>
+
+      <TextView
+        android:id="@+id/toTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fromHashAddressTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="To"/>
+
+      <TextView
+        android:id="@+id/toHashAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="0xsdfsdf234hidfuhf3hf8q2h39dha9wh3adw893d"/>
+
+      <TextView
+        android:id="@+id/transactionFeeTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toHashAddressTextView"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="Transaction Fee"/>
+
+      <TextView
+        android:id="@+id/transactionFeeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/transactionFeeTitleTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="0.001 ETH"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
